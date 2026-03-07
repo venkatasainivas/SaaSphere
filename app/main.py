@@ -1,17 +1,12 @@
 from fastapi import FastAPI
-
-app = FastAPI(title="SaaSphere API")
-
-@app.get("/")
-def root():
-    return {"message": "Welcome to SaaSphere"}
-
-
 from app.db.database import Base, engine
 from app.models import tenant, user
+from app.api import tenants
+from app.api import auth                    
 
 Base.metadata.create_all(bind=engine)
 
-from app.api import tenants
+app = FastAPI(title="SaaSphere API")
 
 app.include_router(tenants.router)
+app.include_router(auth.router)            

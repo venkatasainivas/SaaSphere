@@ -1,17 +1,23 @@
+# Virtual Environment
 venv/
+
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+
+# Environment variables (NEVER push this)
 .env
+
+# Database
 *.db
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# Mac
 .DS_Store
 
-
-
-
-# some-Level Summary of Cryptography Used
-
-bcrypt        → Password hashing (one-way, salted)
-HS256 (JWT)   → Token signing & verification
-Fernet        → Symmetric encryption for sensitive data
-OAuth2        → Secure token flow (Step 14)
-.env secrets  → Key management best practice
+# Logs
+*.log
