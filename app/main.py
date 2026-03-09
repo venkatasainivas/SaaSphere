@@ -6,7 +6,7 @@ from app.api import auth
 from app.api import google_auth    
 from app.api import users                
 
-Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(title="SaaSphere API")
 
